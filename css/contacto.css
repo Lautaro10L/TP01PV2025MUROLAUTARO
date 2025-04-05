@@ -1,15 +1,18 @@
+/* Estilo general */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url('../img/fondo-contacto.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background: #f5f5f5;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Estilo del encabezado */
+/* Encabezado */
 header {
-    background-color: rgba(255, 69, 0, 0.8);
+    background-color: rgba(0, 123, 255, 0.8);
     color: white;
     padding: 20px;
     text-align: center;
@@ -17,60 +20,129 @@ header {
     font-weight: bold;
 }
 
-/* Estilo del formulario */
-main {
-    padding: 50px 20px;
+/* Navegación */
+nav {
+    background-color: rgba(51, 51, 51, 0.9);
+    padding: 15px;
     text-align: center;
-    background: rgba(255, 255, 255, 0.8);
-    width: 60%;
-    margin: 50px auto;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    border-bottom: 3px solid #007bff;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 80%;
-    margin: auto;
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-label {
-    font-weight: bold;
+nav ul li {
+    display: inline;
+    margin: 0 15px;
 }
 
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    background-color: #ff4500;
+nav ul li a {
     color: white;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
 }
 
-button:hover {
-    background-color: #cc3700;
+nav ul li a:hover {
+    background-color: #007bff;
+    color: #fff;
     transform: scale(1.1);
 }
 
-/* Estilo del pie de página */
+/* Sección de contacto */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    margin: 50px auto;
+    width: 90%;
+    max-width: 1000px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.contact-image {
+    flex: 1 1 300px;
+    background: url('../assets/imagenes/formulario.jpg') no-repeat center center;
+    background-size: cover;
+    min-height: 400px;
+}
+
+.contact-form {
+    flex: 1 1 400px;
+    padding: 40px;
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Footer */
 footer {
     background-color: rgba(34, 34, 34, 0.9);
     color: white;
     text-align: center;
     padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
     font-size: 14px;
+    margin-top: auto;
+    width: 100%;
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-image {
+        min-height: 200px;
+    }
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  
